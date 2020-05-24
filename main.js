@@ -10,22 +10,33 @@ $('#search').click(function () {
             'query': film ,
         },
         'success': function(data) {
-// da trasformare in una funzione
-            var array_risultati = data.results;
-            for (var i = 0; i < array_risultati.length; i++) {
-                var titolo = array_risultati[i].title;
-                var titolo_originale = array_risultati[i].original_title;
-                var lingua = array_risultati[i].original_language;
-                var voto = array_risultati[i].vote_average;
-// html da creare dinamicamente con Handlebars
-                $('.film_trovati').append("<li>" + titolo + "<li>");
-                $('.film_trovati').append("<li>" + titolo_originale + "<li>");
-                $('.film_trovati').append("<li>" + lingua + "<li>");
-                $('.film_trovati').append("<li>" + voto + "<li>");
-            }
+            display_movies(data.results);
         },
         'error': function() {
             alert('errore');
         }
     });
 })
+
+//funzione completa che fa visualizzare i film in pagina
+
+function display_movies(array_results) {
+    for (var i = 0; i < array_results.length; i++) {
+        var titolo = array_results[i].title;
+        var titolo_originale = array_results[i].original_title;
+        var lingua = array_results[i].original_language;
+        var voto = array_results[i].vote_average;
+//richiamo questa funzione per inserire i film in pagina
+        html_structure(titolo, titolo_originale, lingua, voto);
+    }
+
+}
+
+//funzione che appende le informazioni dei film in pagina
+
+function html_structure(title, original_title, language, vote) {
+    $('.film_trovati').append("<li>" + title + "<li>");
+    $('.film_trovati').append("<li>" + original_title + "<li>");
+    $('.film_trovati').append("<li>" + language + "<li>");
+    $('.film_trovati').append("<li>" + vote + "<li>");
+}
