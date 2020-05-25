@@ -4,6 +4,8 @@
         <meta charset="utf-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://kit.fontawesome.com/bd6bc08428.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+        <script src="https://kit.fontawesome.com/bd6bc08428.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="style.css">
         <title>Boolflix</title>
     </head>
@@ -22,10 +24,19 @@
             </div>
         </header>
         <main>
-            <ul class="film_trovati">
+            <div class="container movie_list">
 
-            </ul>
+            </div>
         </main>
+        <script id="card" type="text/x-handlebars-template">
+            <ul>
+                <li>{{titolo}}</li>
+                <li>{{titolo_originale}}</li>
+                <li>{{{lingua}}}</li>
+                <li>{{{voto}}}</li>
+            </ul>
+        </script>
         <script src="main.js" charset="utf-8"></script>
     </body>
 </html>
+<img src="" alt="">

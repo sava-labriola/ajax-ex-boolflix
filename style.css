@@ -46,6 +46,22 @@ header {
     cursor: pointer;
 }
 
+.movie_list ul {
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid black;
+    list-style-type: none;
+}
+
+.movie_list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hidden {
+    display: none;
+}
+
 #ricerca {
     height: 30px;
     padding-left: 15px;
