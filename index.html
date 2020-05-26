@@ -6,6 +6,7 @@
         <script src="https://kit.fontawesome.com/bd6bc08428.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
         <script src="https://kit.fontawesome.com/bd6bc08428.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
         <title>Boolflix</title>
     </head>
@@ -29,12 +30,17 @@
             </div>
         </main>
         <script id="card" type="text/x-handlebars-template">
-            <ul>
-                <li>{{titolo}}</li>
-                <li>{{titolo_originale}}</li>
-                <li>{{{lingua}}}</li>
-                <li>{{{voto}}}</li>
-            </ul>
+            <div class="card-wrapper">
+                <img class="sfondo" src="{{{poster}}}" alt="">
+                <div class="info-wrapper">
+                    <ul>
+                        <li>{{titolo}}</li>
+                        <li>{{titolo_originale}}</li>
+                        <li>{{{lingua}}}</li>
+                        <li>{{{voto}}}</li>
+                    </ul>
+                </div>
+            </div>
         </script>
         <script src="main.js" charset="utf-8"></script>
     </body>

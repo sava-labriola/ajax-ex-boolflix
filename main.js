@@ -21,20 +21,22 @@ function display_movies(array_results) {
         var titolo_originale = array_results[i].original_title || array_results[i].original_name;
         var lingua = array_results[i].original_language;
         var voto = array_results[i].vote_average;
+        var immagine = array_results[i].poster_path;
 //richiamo questa funzione per inserire i film in pagina
-        html_structure(titolo, titolo_originale, lingua, voto);
+        html_structure(titolo, titolo_originale, lingua, voto, immagine);
     }
 
 }
 
 //funzione che appende le informazioni dei film in pagina
 
-function html_structure(title, original_title, language, vote) {
+function html_structure(title, original_title, language, vote, image) {
     var placeholder = {
         'titolo': title,
         'titolo_originale': original_title,
         'lingua': flag(language),
-        'voto': vote_to_star(vote)
+        'voto': vote_to_star(vote),
+        'poster': image_broken(image)
     }
 
     var html_finale = template_function(placeholder);
@@ -80,4 +82,11 @@ function ajax(films, url) {
             alert('errore');
         }
     });
+}
+
+function image_broken(image) {
+    if (image == null) {
+        return 'img/netflix_black.png';
+    }
+    return 'https://image.tmdb.org/t/p/w185' + image;
 }
