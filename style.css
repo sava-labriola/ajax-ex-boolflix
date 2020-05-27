@@ -5,6 +5,7 @@
 }
 
 header {
+    padding: 0 20px 0 10px;
     background-color: black;
     height: 50px;
     width: 100%;
@@ -22,7 +23,7 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: calc(185px * 6);
     height: 100%;
     margin: auto;
 }
@@ -64,8 +65,15 @@ body {
     bottom: 0;
     padding: 10px;
     color: white;
-    white-space: nowrap;
     font-family: 'Roboto', sans-serif;
+}
+
+.no-wrap {
+    white-space: nowrap;
+}
+
+ul i {
+    color: yellow;
 }
 
 .info-wrapper {
@@ -76,6 +84,7 @@ body {
 }
 
 .movie_list {
+    max-width: calc(185px * 6);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

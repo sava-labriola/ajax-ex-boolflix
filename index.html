@@ -17,7 +17,7 @@
                     <img src="img/boolflix.png" alt="boolflix_logo">
                 </div>
                 <div class="navigazione">
-                    <input id="ricerca" type="text" placeholder="cerca...">
+                    <input id="ricerca" type="text" placeholder="cerca Film, Serie TV...">
                     <div class="icona_ricerca">
                         <button id="search"><i class="fas fa-search"></i></button>
                     </div>
@@ -26,7 +26,6 @@
         </header>
         <main>
             <div class="container movie_list">
-
             </div>
         </main>
         <script id="card" type="text/x-handlebars-template">
@@ -34,10 +33,11 @@
                 <img class="sfondo" src="{{{poster}}}" alt="">
                 <div class="info-wrapper">
                     <ul>
-                        <li>{{titolo}}</li>
-                        <li>{{titolo_originale}}</li>
+                        <li class="no-wrap">{{titolo}}</li>
+                        <li class="no-wrap">{{titolo_originale}}</li>
                         <li>{{{lingua}}}</li>
                         <li>{{{voto}}}</li>
+                        <li>{{{trama}}}</li>
                     </ul>
                 </div>
             </div>
