@@ -6,17 +6,20 @@ var template_function = Handlebars.compile(template_html);
 
 //avvio ricerca premendo il pulsante
 
-$('#search').click(function () {
-    search();
-})
-
-//avvio ricerca premendo invio
-
-$('#ricerca').keyup(function(event) {
-    if(event.which == 13) {
+$(document).ready(function () {
+    
+    $('#search').click(function () {
         search();
-    }
-});
+    })
+
+    //avvio ricerca premendo invio
+
+    $('#ricerca').keyup(function(event) {
+        if(event.which == 13) {
+            search();
+        }
+    });
+})
 
 //funzione completa che fa visualizzare i film in pagina
 
@@ -101,10 +104,11 @@ function ajax(films, url) {
 //funzione se l immagine non è disponibile
 
 function image_broken(image) {
+    var image_path = 'https://image.tmdb.org/t/p/w185' + image;
     if (image == null) {
-        return 'img/netflix_black.png';
+        image_path = 'img/netflix_black.png';
     }
-    return 'https://image.tmdb.org/t/p/w185' + image;
+    return image_path;
 }
 
 function overview(view) {
